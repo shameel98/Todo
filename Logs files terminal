@@ -1,0 +1,193 @@
+#
+#server {
+#	listen 80;
+#	listen [::]:80;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files $uri $uri/ =404;
+#	}
+#}
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# git clonehttps://github.com/LondheShubham153/django-notes-app.git
+git: 'clonehttps://github.com/LondheShubham153/django-notes-app.git' is not a git command. See 'git --help'.
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# git clone https://github.com/LondheShubham153/django-notes-app.git
+Cloning into 'django-notes-app'...
+remote: Enumerating objects: 363, done.
+remote: Total 363 (delta 0), reused 0 (delta 0), pack-reused 363
+Receiving objects: 100% (363/363), 1.69 MiB | 17.61 MiB/s, done.
+Resolving deltas: 100% (96/96), done.
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# sudo apt install docker.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-buildx docker-compose-v2 docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker.io pigz runc ubuntu-fan
+0 upgraded, 8 newly installed, 0 to remove and 21 not upgraded.
+Need to get 76.8 MB of archives.
+After this operation, 289 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 runc amd64 1.1.12-0ubuntu3 [8599 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 containerd amd64 1.7.12-0ubuntu4 [38.6 MB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 dns-root-data all 2023112702~willsync1 [4450 B]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 dnsmasq-base amd64 2.90-2build2 [375 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 docker.io amd64 24.0.7-0ubuntu4 [29.1 MB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 ubuntu-fan all 0.12.16 [35.2 kB]
+Fetched 76.8 MB in 2s (40.0 MB/s)     
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 71887 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.8-1_amd64.deb ...
+Unpacking pigz (2.8-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.1.12-0ubuntu3_amd64.deb ...
+Unpacking runc (1.1.12-0ubuntu3) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.7.12-0ubuntu4_amd64.deb ...
+Unpacking containerd (1.7.12-0ubuntu4) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2023112702~willsync1_all.deb ...
+Unpacking dns-root-data (2023112702~willsync1) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../5-dnsmasq-base_2.90-2build2_amd64.deb ...
+Unpacking dnsmasq-base (2.90-2build2) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../6-docker.io_24.0.7-0ubuntu4_amd64.deb ...
+Unpacking docker.io (24.0.7-0ubuntu4) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../7-ubuntu-fan_0.12.16_all.deb ...
+Unpacking ubuntu-fan (0.12.16) ...
+Setting up dnsmasq-base (2.90-2build2) ...
+Setting up runc (1.1.12-0ubuntu3) ...
+Setting up dns-root-data (2023112702~willsync1) ...
+Setting up bridge-utils (1.7.1-1ubuntu2) ...
+Setting up pigz (2.8-1) ...
+Setting up containerd (1.7.12-0ubuntu4) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+Setting up ubuntu-fan (0.12.16) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /usr/lib/systemd/system/ubuntu-fan.service.
+Setting up docker.io (24.0.7-0ubuntu4) ...
+info: Selecting GID from range 100 to 999 ...
+info: Adding group `docker' (GID 113) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+Processing triggers for dbus (1.14.10-4ubuntu4) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                                                                                                                                       
+Scanning linux images...                                                                                                                                                                                    
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# sudo usermod -aG docker ubuntu
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# ls
+default  django-notes-app
+root@ip-172-31-26-101:/etc/nginx/sites-enabled# cd django-notes-app/
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# ks
+Command 'ks' not found, but can be installed with:
+apt install qdl
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# ls
+Dockerfile  Jenkinsfile  README.md  api  db.sqlite3  docker-compose.yml  manage.py  mynotes  notesapp  procfile  requirements.txt  staticfiles
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# docker build -t notes-app .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  8.397MB
+Step 1/7 : FROM python:3.9
+3.9: Pulling from library/python
+1468e7ff95fc: Pull complete 
+2cf9c2b42f41: Pull complete 
+c4c40c3e3cdf: Pull complete 
+c05cc1123d7e: Pull complete 
+b6f29ccdcc55: Pull complete 
+9c8be2164d2a: Pull complete 
+d00b60686603: Pull complete 
+1320d210901a: Pull complete 
+Digest: sha256:5930d54604459569953a4164839ad9bb32f6a1c76e6740c84a116b4290a57852
+Status: Downloaded newer image for python:3.9
+ ---> ab7eeae5d25f
+Step 2/7 : WORKDIR /app/backend
+ ---> Running in 2bd708584b41
+Removing intermediate container 2bd708584b41
+ ---> 6ee466b4e318
+Step 3/7 : COPY requirements.txt /app/backend
+ ---> 62ddf82819bd
+Step 4/7 : RUN pip install -r requirements.txt
+ ---> Running in d53cc58fc3d1
+Collecting asgiref==3.6.0
+  Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
+Collecting Django==4.1.5
+  Downloading Django-4.1.5-py3-none-any.whl (8.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 29.4 MB/s eta 0:00:00
+Collecting django-cors-headers==3.13.0
+  Downloading django_cors_headers-3.13.0-py3-none-any.whl (13 kB)
+Collecting djangorestframework==3.14.0
+  Downloading djangorestframework-3.14.0-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.2 MB/s eta 0:00:00
+Collecting gunicorn==20.1.0
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 13.1 MB/s eta 0:00:00
+Collecting pytz==2022.7.1
+  Downloading pytz-2022.7.1-py2.py3-none-any.whl (499 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 499.4/499.4 kB 36.2 MB/s eta 0:00:00
+Collecting sqlparse==0.4.3
+  Downloading sqlparse-0.4.3-py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.8/42.8 kB 7.2 MB/s eta 0:00:00
+Collecting tzdata==2022.7
+  Downloading tzdata-2022.7-py2.py3-none-any.whl (340 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 340.1/340.1 kB 3.8 MB/s eta 0:00:00
+Collecting whitenoise==6.3.0
+  Downloading whitenoise-6.3.0-py3-none-any.whl (19 kB)
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.9/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 5)) (58.1.0)
+Installing collected packages: pytz, whitenoise, tzdata, sqlparse, gunicorn, asgiref, Django, djangorestframework, django-cors-headers
+Successfully installed Django-4.1.5 asgiref-3.6.0 django-cors-headers-3.13.0 djangorestframework-3.14.0 gunicorn-20.1.0 pytz-2022.7.1 sqlparse-0.4.3 tzdata-2022.7 whitenoise-6.3.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+Removing intermediate container d53cc58fc3d1
+ ---> cbc3a28219e8
+Step 5/7 : COPY . /app/backend
+ ---> f6eba028996d
+Step 6/7 : EXPOSE 8000
+ ---> Running in 89e79041178d
+Removing intermediate container 89e79041178d
+ ---> e72a7e555577
+Step 7/7 : CMD python /app/backend/manage.py runserver 0.0.0.0:8000
+ ---> Running in 1c0eba6d5f2a
+Removing intermediate container 1c0eba6d5f2a
+ ---> fa69e34b8cce
+Successfully built fa69e34b8cce
+Successfully tagged notes-app:latest
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+notes-app    latest    fa69e34b8cce   38 seconds ago   1.05GB
+python       3.9       ab7eeae5d25f   7 weeks ago      997MB
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# docker run -d -p 8000:8000 notes-app:latest
+44d543eee3fca60c0067ce241b48a55cc7bef271c0a1d2801a32d5397515ef1e
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+44d543eee3fc   notes-app:latest   "/bin/sh -c 'python …"   10 seconds ago   Up 10 seconds   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   quirky_hawking
+root@ip-172-31-26-101:/etc/nginx/sites-enabled/django-notes-app# client_loop: send disconnect: Broken pipe
+shameel@Shameels-MacBook-Air Downloads % ssh -i "mys.pem" ubuntu@ec2-54-91-182-240.compute-1.amazonaws.com
